@@ -50,7 +50,6 @@ if __name__ == "__main__":
         results = check_urls_async(pool, urls)
         checks_list= ""
         for url, result in results.items():
-            result.get()
             checks_list += f"\n\t{url} - is {'ok' if result.get() else 'failed'}"
         log.info(f"Results:{checks_list}")
     finally:
